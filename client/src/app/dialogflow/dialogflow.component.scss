@@ -1,0 +1,10 @@
+/* card styling in default styles.scss */
+
+.knowledgebase .card {
+    margin-right: 20px;
+}
+
+.knowledgebase {
+    height: calc(100% - 220px);
+    overflow-y: scroll;
+}
