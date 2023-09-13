@@ -74,12 +74,7 @@ var speechClient, requestSTT, ttsClient, requestTTS, mediaTranslationClient, req
 /**
  * Setup Express Server with CORS and SocketIO
  */
-const Speaker = require('speaker')
-const speaker = new Speaker({
-  channels: 1,
-  bitDepth: 16,
-  sampleRate: 44100
-})
+
 
 function setupServer() {
     // setup Express
