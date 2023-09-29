@@ -113,8 +113,8 @@ function setupServer() {
           // get the name of the stream
           const filename = path.basename(data.name);
           // pipe the filename to the stream
-          stream.pipe(fs.createWriteStream(filename));
-          //stream.pipe(process.stdout)
+          //stream.pipe(fs.createWriteStream(filename));
+          stream.pipe(process.stdout)
         
           //stream.pipe(mystream)
           
