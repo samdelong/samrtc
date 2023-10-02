@@ -51,7 +51,7 @@ const speechContexts = [
 
 
 // load all the libraries for the server
-const socketIo = require('socket.io');
+const socketIo, { Server } = require('socket.io');
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
@@ -78,14 +78,8 @@ var speechClient, requestSTT, ttsClient, requestTTS, mediaTranslationClient, req
 
 function setupServer() {
     // setup Express
-    app.use(cors());
-    app.get('/', function(req, res) {
-      res.sendFile(path.join(__dirname + '/example'+ example + '.html'));
-    });
-    server = http.createServer(app);
-    io = socketIo(server);
-    server.listen(port, () => {
-    });
+    
+    io = new Server(3000)
 
     // Listener, once the client connect to the server socket
     io.on('connect', (client) => {
